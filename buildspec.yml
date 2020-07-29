@@ -3,10 +3,12 @@ version: 0.2
 phases:
   build:
     commands:
-      - dotnet restore
-      - dotnet publish -o pipeline
+      - dotnet restore dotnet-core-tutorial.csproj
+      - dotnet build dotnet-core-tutorial.csproj
+      - dotnet publish dotnet-core-tutorial.csproj -o site
+      - cp ./dotnet-core-tutorial/aws-windows-deployment-manifest.json ./dotnet-core-tutorial/site/.
 artifacts:
   files:
     - '**/*'
-  base-directory: ./bin/Release/netcoreapp3.1/pipeline/publish/
+  base-directory: 'dotnet-core-tutorial/site'
   discard-paths: no
