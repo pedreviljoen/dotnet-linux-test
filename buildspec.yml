@@ -5,7 +5,7 @@ phases:
     commands:
       - dotnet restore dotnet-core-tutorial.csproj
       - dotnet build dotnet-core-tutorial.csproj
-      - dotnet publish dotnet-core-tutorial.csproj -o site
+      - dotnet publish dotnet-core-tutorial.csproj -o ./site
       - cp ./dotnet-core-tutorial/aws-windows-deployment-manifest.json ./dotnet-core-tutorial/site/.
 artifacts:
   files:
