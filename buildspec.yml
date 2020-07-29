@@ -8,7 +8,8 @@ phases:
       - dotnet publish dotnet-core-tutorial.csproj -o site
   post_build:
     commands:
-      - cp aws-windows-deployment-manifest.json ./codebuild/output/src203783356/src/site/
+      - echo $CODEBUILD_SRC_DIR
+      - cp aws-windows-deployment-manifest.json dotnet-core-tutorial/site/
 artifacts:
   files:
     - '**/*'
