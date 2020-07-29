@@ -7,4 +7,6 @@ phases:
       - dotnet publish -o pipeline
 artifacts:
   files:
-    - .\pipeline\*
+    - '**/*'
+  base-directory: ./bin/Release/netcoreapp3.1/pipeline/publish/
+  discard-paths: no
