@@ -5,12 +5,12 @@ phases:
     commands:
       - dotnet restore dotnet-core-tutorial.csproj
       - dotnet build dotnet-core-tutorial.csproj
-      - dotnet publish dotnet-core-tutorial.csproj -o ./site
+      - dotnet publish dotnet-core-tutorial.csproj -o site
   post_build:
     commands:
-      - cp aws-windows-deployment-manifest.json ./dotnet-core-tutorial/site
+      - cp aws-windows-deployment-manifest.json ./codebuild/output/src203783356/src/site/
 artifacts:
   files:
     - '**/*'
-  base-directory: 'dotnet-core-tutorial/site'
+  base-directory: 'codebuild/output/src203783356/src/site/'
   discard-paths: no
