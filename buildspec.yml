@@ -6,6 +6,8 @@ phases:
       - dotnet restore dotnet-core-tutorial.csproj
       - dotnet build dotnet-core-tutorial.csproj
       - dotnet publish dotnet-core-tutorial.csproj -o ./site
+  post_build:
+    commands:
       - cp aws-windows-deployment-manifest.json ./dotnet-core-tutorial/site/.
 artifacts:
   files:
