@@ -9,9 +9,9 @@ phases:
   post_build:
     commands:
       - echo $CODEBUILD_SRC_DIR
-      - cp aws-windows-deployment-manifest.json dotnet-core-tutorial/site/
+      - cp aws-windows-deployment-manifest.json $CODEBUILD_SRC_DIR/site/
 artifacts:
   files:
     - '**/*'
-  base-directory: 'codebuild/output/src203783356/src/site/'
+  base-directory: '$CODEBUILD_SRC_DIR/site/'
   discard-paths: no
